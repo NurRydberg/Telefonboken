@@ -62,5 +62,4 @@ function skapaKontakt(){
             kontakterUl.removeChild(kontakterUl.firstChild);
         }
     });
-    
 }
