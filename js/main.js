@@ -58,8 +58,13 @@ function skapaKontakt(){
     }
     let raderaAlltBtn = document.getElementById('raderaAlltBtn');
     raderaAlltBtn.addEventListener('click', function() {
-        while (kontakterUl.firstChild) {
+        const isBekraftad = confirm(`Är du säker på att du vill radera alla kontakter? Denna åtgärd går ej att ångra.`);
+
+        if(isBekraftad){
+                    while (kontakterUl.firstChild) {
             kontakterUl.removeChild(kontakterUl.firstChild);
+        }
+
         }
     });
 }
