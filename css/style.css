@@ -3,3 +3,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+#raderaAlltBtn {
+    border-color: red;
+    background-color: rgb(255, 82, 82);
+    border-radius: 10px;
+}
