@@ -56,4 +56,11 @@ function skapaKontakt(){
             redigeraBtn.innerText="Redigera";
         }
     }
+    let raderaAlltBtn = document.getElementById('raderaAlltBtn');
+    raderaAlltBtn.addEventListener('click', function() {
+        while (kontakterUl.firstChild) {
+            kontakterUl.removeChild(kontakterUl.firstChild);
+        }
+    });
+    
 }
