@@ -12,7 +12,7 @@ skapaKontaktKnapp.addEventListener('click', function (){
 
     if (namn && telefonnummer) {
         skapaKontakt();
-        namnInput.value = "";
+        namnInput.value = ""; 
         telefonnummerInput.value = "";
     }
 });
@@ -42,7 +42,7 @@ function skapaKontakt(){
     listanKontakter.appendChild(raderaBtn);
     kontakterUl.appendChild(listanKontakter);
     
-    
+    //--------------------Redigerar kontakt--------------------
     redigeraBtn.addEventListener('click', redigeraKontakt);
     function redigeraKontakt(){
         if (redigeraBtn.innerText==="Redigera"){
@@ -56,14 +56,25 @@ function skapaKontakt(){
             redigeraBtn.innerText="Redigera";
         }
     }
+    //------------------Raderar alla kontakter-----------------
     let raderaAlltBtn = document.getElementById('raderaAlltBtn');
     raderaAlltBtn.addEventListener('click', function() {
+
+        //Visa bekräftelsemeddelande
+        let arDuSaker = confirm('Är du säker op att du vill radera alla kontakter?');
+
+        if(arDuSaker){ 
+        while (kontakterUl.firstChild) {
+            kontakterUl.removeChild(kontakterUl.firstChild);
+        }
+
         const isBekraftad = confirm(`Är du säker på att du vill radera alla kontakter? Denna åtgärd går ej att ångra.`);
 
         if(isBekraftad){
                     while (kontakterUl.firstChild) {
             kontakterUl.removeChild(kontakterUl.firstChild);
         }
+
 
         }
     });
