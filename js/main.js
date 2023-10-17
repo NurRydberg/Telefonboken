@@ -4,7 +4,7 @@ const skapaKontaktKnapp = document.getElementById('skapaKontaktKnapp');
 const kontakterUl = document.getElementById('kontakterUl');
 const KontaktLista = document.getElementById('kontakter');
 let felmeddelande = document.getElementById('felmeddelande');
-
+let felmeddelande2 = document.getElementById('felmeddelande2');
 
 // Händelse för klick på "Skapa kontakt"
 skapaKontaktKnapp.addEventListener('click', function (){
@@ -19,7 +19,7 @@ skapaKontaktKnapp.addEventListener('click', function (){
     } else {
         felmeddelande.innerHTML = 'Båda fälten måste fyllas i!';
     }
-    
+
 });
 
 //----------------Funktion för att skapa en kontakt----------------
@@ -31,6 +31,9 @@ function skapaKontakt(){
     let nummerLista = document.createElement('input');
     nummerLista.setAttribute('value', telefonnummer.value)
     nummerLista.setAttribute('disabled', true)
+
+    const ursprungligtNamn = namn.value;
+    const ursprungligtTelefonnummer = telefonnummer.value;
 
     //----------Lägg till redigerings- och raderingsknapp----------
     let redigeraBtn = document.createElement('button');
@@ -56,9 +59,28 @@ function skapaKontakt(){
         redigeraBtn.innerText="Spara";
         }
         else {
-            namnLista.disabled=true
-            nummerLista.disabled=true 
-            redigeraBtn.innerText="Redigera";
+            const nyttNamn = namnLista.value;
+            const nyttTelefonnummer = nummerLista.value;
+
+            if (nyttNamn && nyttTelefonnummer) {
+                felmeddelande2.innerHTML = "";
+                namnLista.disabled=true
+                nummerLista.disabled=true 
+            } else {
+                felmeddelande2.innerHTML = 'Båda fälten måste fyllas i!';
+            }
+            // if (nyttNamn === "" || nyttTelefonnummer ===""){
+            // felmeddelande2.innerHTML = 'Båda fälten måste fyllas i innan du kan spara!';
+
+            // } else {
+            // namnLista.disabled=true
+            // nummerLista.disabled=true 
+            // redigeraBtn.innerText="Redigera";
+            // ursprungligtNamn = nyttNamn;
+            // ursprungligtTelefonnummer = nyttTelefonnummer;
+            // felmeddelande2.innerHTML = '';
+            // }
+
         }
     }
     //------------------Raderar alla kontakter-----------------
