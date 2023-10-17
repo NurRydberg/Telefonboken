@@ -3,6 +3,7 @@ const telefonnummerInput = document.getElementById('telefonnummer');
 const skapaKontaktKnapp = document.getElementById('skapaKontaktKnapp');
 const kontakterUl = document.getElementById('kontakterUl');
 const KontaktLista = document.getElementById('kontakter');
+let felmeddelande = document.getElementById('felmeddelande');
 
 
 // Händelse för klick på "Skapa kontakt"
@@ -14,7 +15,11 @@ skapaKontaktKnapp.addEventListener('click', function (){
         skapaKontakt();
         namnInput.value = ""; 
         telefonnummerInput.value = "";
+        felmeddelande.innerHTML = "";
+    } else {
+        felmeddelande.innerHTML = 'Båda fälten måste fyllas i!';
     }
+    
 });
 
 //----------------Funktion för att skapa en kontakt----------------
