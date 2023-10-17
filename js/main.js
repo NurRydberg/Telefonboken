@@ -60,7 +60,7 @@ function skapaKontakt(){
     let raderaAlltBtn = document.getElementById('raderaAlltBtn');
     raderaAlltBtn.addEventListener('click', function() {
         //Visa bekräftelsemeddelande
-        let arDuSaker = confirm('Är du säker op att du vill radera alla kontakter?');
+        let arDuSaker = confirm('Är du säker på att du vill radera alla kontakter?');
 
         if(arDuSaker){ 
         while (kontakterUl.firstChild) {
