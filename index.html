@@ -10,7 +10,7 @@
 <body>
     <div class="container" id="kontakter" class="d-flex justify-content-center">
         <!-------------------------SKAPA EN NY KONTAKT------------------------->
-        <h1>Telefonboken</h1><p>&#128383;</p>
+        <h1>Telefonboken</h1><p id="emojin">&#128383;</p>
         <br><br><br>
         <div id="skapaKontakt">
             <h4>Skapa ny kontakt</h4>
@@ -21,10 +21,10 @@
             <label for="telefonnummer">Nummer:</label>
             <input type="tel" id="telefonnummer" placeholder="Ange telefonnummer">
 
-            <button id="skapaKontaktKnapp" type="button" class="btn btn-light">Skapa kontakt</button>
+            <button id="skapaKontaktKnapp" type="button" class="btn btn-light btn-sm" >Skapa kontakt</button>
             <div id="felmeddelande" style="color: red"></div>
         </div>
-
+        
         <!-------------------------VISA KONTAKTLISTA------------------------->
         <div id="kontaktLista">
             <h4>Kontaktlista</h4>
@@ -33,7 +33,11 @@
             </ul>
             <div id="felmeddelande2" style="color: red"></div>
             <br>
-            <button id="raderaAlltBtn" type="button" class="btn btn-danger">Radera allt</button>
+            <button id="raderaAlltBtn" type="button" class="btn btn-danger btn-sm">Radera allt</button>
+
+            <button id="redigeraBtn" type="button" class="btn btn-danger btn-sm" style="display: none;"></button>
+            <button id="raderaBtn" type="button" class="btn btn-danger btn-sm" style="display: none;"></button>
+
         </div>
     </div>
 </body>

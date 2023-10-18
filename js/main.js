@@ -5,6 +5,9 @@ const kontakterUl = document.getElementById('kontakterUl');
 const KontaktLista = document.getElementById('kontakter');
 let felmeddelande = document.getElementById('felmeddelande');
 let felmeddelande2 = document.getElementById('felmeddelande2');
+let emojin = document.getElementById('emojin');
+const redigeraBtn = document.getElementById('redigeraBtn');
+const raderaBtn = document.getElementById('raderaBtn');
 
 // Händelse för klick på "Skapa kontakt"
 skapaKontaktKnapp.addEventListener('click', function (){
@@ -16,8 +19,10 @@ skapaKontaktKnapp.addEventListener('click', function (){
         namnInput.value = ""; 
         telefonnummerInput.value = "";
         felmeddelande.innerHTML = "";
+        emojin.innerHTML = "&#9989;";
     } else {
         felmeddelande.innerHTML = 'Båda fälten måste fyllas i för att en kontakt ska kunna skapas!';
+        emojin.innerHTML = "&#128281;";
     }
 
 });
@@ -38,7 +43,7 @@ function skapaKontakt(){
     //----------Lägg till redigerings- och raderingsknapp----------
     let redigeraBtn = document.createElement('button');
     redigeraBtn.innerText = "Redigera";
-    
+   
     const raderaBtn = document.createElement('button');
     raderaBtn.innerText = 'Radera';
     raderaBtn.addEventListener('click', function(e){
@@ -55,8 +60,14 @@ function skapaKontakt(){
     function redigeraKontakt(){
         if (redigeraBtn.innerText==="Redigera"){
         namnLista.disabled=false
-        nummerLista.disabled=false 
+        nummerLista.disabled=false
+        emojin.innerHTML = "&#9997;";
         redigeraBtn.innerText="Spara";
+
+
+        //HÄR JOBBAR VI
+        // redigeraBtn.innerText="btn btn-danger btn-sm";
+
         }
         else {
             const nyttNamn = namnLista.value;
@@ -66,21 +77,12 @@ function skapaKontakt(){
                 felmeddelande2.innerHTML = "";
                 namnLista.disabled=true
                 nummerLista.disabled=true
+                emojin.innerHTML = "&#9989;";
                 redigeraBtn.innerText="Redigera"; 
             } else {
                 felmeddelande2.innerHTML = 'Båda fälten måste fyllas i innan en redigerad kontakt kan sparas!';
+                emojin.innerHTML = "&#10060;";
             }
-            // if (nyttNamn === "" || nyttTelefonnummer ===""){
-            // felmeddelande2.innerHTML = 'Båda fälten måste fyllas i innan du kan spara!';
-
-            // } else {
-            // namnLista.disabled=true
-            // nummerLista.disabled=true 
-            // redigeraBtn.innerText="Redigera";
-            // ursprungligtNamn = nyttNamn;
-            // ursprungligtTelefonnummer = nyttTelefonnummer;
-            // felmeddelande2.innerHTML = '';
-            // }
 
         }
     }
