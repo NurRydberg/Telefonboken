@@ -17,7 +17,7 @@ skapaKontaktKnapp.addEventListener('click', function (){
         telefonnummerInput.value = "";
         felmeddelande.innerHTML = "";
     } else {
-        felmeddelande.innerHTML = 'Båda fälten måste fyllas i!';
+        felmeddelande.innerHTML = 'Båda fälten måste fyllas i för att en kontakt ska kunna skapas!';
     }
 
 });
@@ -68,7 +68,7 @@ function skapaKontakt(){
                 nummerLista.disabled=true
                 redigeraBtn.innerText="Redigera"; 
             } else {
-                felmeddelande2.innerHTML = 'Båda fälten måste fyllas i!';
+                felmeddelande2.innerHTML = 'Båda fälten måste fyllas i innan en redigerad kontakt kan sparas!';
             }
             // if (nyttNamn === "" || nyttTelefonnummer ===""){
             // felmeddelande2.innerHTML = 'Båda fälten måste fyllas i innan du kan spara!';

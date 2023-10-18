@@ -1,10 +1,21 @@
+
 body {
+
     background-image: url(/bilder/bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    min-height: 60vh;
+    justify-content: center;
 }
-#raderaAlltBtn {
-    border-color: red;
-    background-color: rgb(255, 82, 82);
-    border-radius: 10px;
+
+
+h1 {
+    display: inline;
+}
+p {
+    display: inline;
+    font-size: 40px;
 }
