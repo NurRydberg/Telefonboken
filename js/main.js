@@ -65,7 +65,8 @@ function skapaKontakt(){
             if (nyttNamn && nyttTelefonnummer) {
                 felmeddelande2.innerHTML = "";
                 namnLista.disabled=true
-                nummerLista.disabled=true 
+                nummerLista.disabled=true
+                redigeraBtn.innerText="Redigera"; 
             } else {
                 felmeddelande2.innerHTML = 'Båda fälten måste fyllas i!';
             }
@@ -85,14 +86,17 @@ function skapaKontakt(){
     }
     //------------------Raderar alla kontakter-----------------
     let raderaAlltBtn = document.getElementById('raderaAlltBtn');
-    raderaAlltBtn.addEventListener('click', function() {
-        //Visa bekräftelsemeddelande
-        let arDuSaker = confirm('Är du säker på att du vill radera alla kontakter?');
+    raderaAlltBtn.addEventListener('click', radera);
+    //     //Visa bekräftelsemeddelande
+    //     let arDuSaker = confirm('Är du säker på att du vill radera alla kontakter?');
+    // });
+          
+}
+function radera(){
+    const arDuSaker = confirm(`Är du säker på att du vill radera alla kontakter? Denna åtgärd går ej att ångra.`);
+    if(arDuSaker){
+        document.getElementById("kontakterUl").innerHTML= "";
+        return;
+    }
 
-        if(arDuSaker){ 
-        while (kontakterUl.firstChild) {
-            kontakterUl.removeChild(kontakterUl.firstChild);
-        }
-        }
-    });
 }
