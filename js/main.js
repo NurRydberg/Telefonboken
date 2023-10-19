@@ -88,6 +88,7 @@ function skapaKontakt(){
     }
     //------------------Raderar alla kontakter-----------------
     let raderaAlltBtn = document.getElementById('raderaAlltBtn');
+
     raderaAlltBtn.addEventListener('click', radera);
     //     //Visa bekräftelsemeddelande
     //     let arDuSaker = confirm('Är du säker på att du vill radera alla kontakter?');
@@ -100,5 +101,27 @@ function radera(){
         document.getElementById("kontakterUl").innerHTML= "";
         return;
     }
+
+
+    raderaAlltBtn.addEventListener('click', function() {
+
+        //Visa bekräftelsemeddelande
+        let arDuSaker = confirm('Är du säker på att du vill radera alla kontakter?');
+
+        if(arDuSaker){ 
+        while (kontakterUl.firstChild) {
+            kontakterUl.removeChild(kontakterUl.firstChild);
+        }
+
+        const isBekraftad = confirm(`Är du säker på att du vill radera alla kontakter? Denna åtgärd går ej att ångra.`);
+
+        if(isBekraftad){
+                    while (kontakterUl.firstChild) {
+            kontakterUl.removeChild(kontakterUl.firstChild);
+        }
+
+
+        }
+    });
 
 }
