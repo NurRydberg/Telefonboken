@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Telefonbok</title>
 </head>
 <body>
-    <div id="kontakter">
+    <div class="container" id="kontakter" class="d-flex justify-content-center">
         <!-------------------------SKAPA EN NY KONTAKT------------------------->
+        <h1>Telefonboken</h1><p id="emojin">&#128383;</p>
+        <br><br><br>
         <div id="skapaKontakt">
-            <h2>Skapa ny kontakt</h2>
+            <h4>Skapa ny kontakt</h4>
 
             <label for="namn">Namn:</label>
             <input type="text" id="namn" placeholder="Ange namn">
-
+            
             <label for="telefonnummer">Nummer:</label>
             <input type="tel" id="telefonnummer" placeholder="Ange telefonnummer">
 
-            <button id="skapaKontaktKnapp">Skapa kontakt</button>
+            <button id="skapaKontaktKnapp" type="button" class="btn btn-light btn-sm" >Skapa ny kontakt</button>
             <div id="felmeddelande" style="color: red"></div>
         </div>
-
+        
         <!-------------------------VISA KONTAKTLISTA------------------------->
         <div id="kontaktLista">
-            <h2>Kontaktlista</h2>
+            <h4>Kontaktlista</h4>
             <ul id="kontakterUl">
  
             </ul>
             <div id="felmeddelande2" style="color: red"></div>
-            <button id="raderaAlltBtn">Radera allt</button>
+            <br>
+            <button id="raderaAlltBtn" type="button" class="btn btn-danger btn-sm">Radera allt</button>
+
+        <!-------------------------redigera- och raderaknappen------------------------->
+            <button id="redigeraBtn" type="button" class="btn btn-danger btn-sm" style="display: none;">Redigera</button>
+            <button id="raderaBtn" type="button" class="btn btn-danger btn-sm" style="display: none;">Radera</button>
+
         </div>
     </div>
 </body>
