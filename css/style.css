@@ -1,6 +1,6 @@
 body {
 
-    background-image: url(../bilder/bg.jpg);
+    background-image: url(./bilder/bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     margin: auto;
