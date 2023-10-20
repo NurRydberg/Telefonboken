@@ -103,8 +103,3 @@ function radera(){
 
 }
 
-{
-    output: {
-      publicPath: argv.mode === 'production' ? '/my-static-website' : '/',
-    }
-  }
